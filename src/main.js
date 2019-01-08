@@ -20,15 +20,15 @@ $(document).ready(function() {
     // console.log(result);
     // console.log(playerOne);
   });
+
   // Hold Turn
   holdTurn.click(function() {
     var total = playerOne.hold();
-    if (total >= 20){
+    if (playerOne.win()) {
       $(".pig").show();
       $("#dice").hide();
       alert("You Win!");
-    }
-    else {
+    } else {
       $(".hold-turn").text(total);
       $(".player-one").hide();
       $(".player-two").show();
@@ -43,7 +43,7 @@ $(document).ready(function() {
   // Roll Dice
   turnRoll2.click(function() {
     var result2 = playerTwo.rollDi();
-    if (result2 === 0){
+    if (playerTwo.win()){
       $(".player-two").hide();
       $(".player-one").show();
     }

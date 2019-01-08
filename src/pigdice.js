@@ -21,3 +21,9 @@ Players.prototype.hold = function() {
   this.turn = 0;
   return this.total;
 };
+
+Players.prototype.win = function() {
+  if (this.total >= 10) {
+    return true;
+  }
+};
