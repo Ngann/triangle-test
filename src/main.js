@@ -1,19 +1,97 @@
 import './styles.css';
-import { Triangle } from './triangle.js';
+import { Players } from './pigdice.js';
 
+
+//User interface Logic:
 
 $(document).ready(function() {
-  $("form#triangle").submit(function(event) {
-    var side1 = parseInt($("input#side1").val());
-    var side2 = parseInt($("input#side2").val());
-    var side3 = parseInt($("input#side3").val());
-    var triangle = new Triangle(side1, side2, side3);
-    var result = triangle.checkType();
+  // Player One
+  var turnRoll = $("#roll");
+  var holdTurn = $("#hold");
+  // Roll Dice
+  turnRoll.click(function() {
+    var result = playerOne.rollDi();
+    if (result === 0){
+      $(".player-one").hide();
+      $(".player-two").show();
+    }
+    $("#player-one-name").text(playerOne.user);
+    $("#turnRoll").text(result);
+    // console.log(result);
+    // console.log(playerOne);
+  });
+  // Hold Turn
+  holdTurn.click(function() {
+    var total = playerOne.hold();
+    if (total >= 20){
+      $(".pig").show();
+      $("#dice").hide();
+      alert("You Win!");
+    }
+    else {
+      $(".hold-turn").text(total);
+      $(".player-one").hide();
+      $(".player-two").show();
+      // console.log(total);
+      // console.log(playerOne);
+    }
+  });
 
-    $(".triangle_type").text(result);
+  // Player Two
+  var turnRoll2 = $("#roll2");
+  var holdTurn2 = $("#hold2");
+  // Roll Dice
+  turnRoll2.click(function() {
+    var result2 = playerTwo.rollDi();
+    if (result2 === 0){
+      $(".player-two").hide();
+      $(".player-one").show();
+    }
+    $("#turnRoll2").text(result2);
+    // console.log(result2);
+    // console.log(playerTwo);
+  });
+  // Hold Turn
+  holdTurn2.click(function() {
+    var total2 = playerTwo.hold();
+    if (total2 >= 20){
+      $(".pig").show();
+      $("#dice").hide();
+      alert("You Win!");
+    }
+    $(".hold-turn2").text(total2);
+    $(".player-two").hide();
+    $(".player-one").show();
+    // console.log(total2)
+    // console.log(playerTwo);
+  });
 
-    $("#result").show();
-
+  // Start Screen
+  var playerOne = null;
+  var playerTwo = null;
+  $("form#userNames").submit(function(event){
     event.preventDefault();
+    var inputtedPlayerOne = $("input#player-one").val();
+    var inputtedPlayerTwo = $("input#player-two").val();
+    playerOne = new Players(inputtedPlayerOne);
+    playerTwo = new Players(inputtedPlayerTwo);
+    // debugger
+    $(".player-one-name").text(playerOne.user);
+    $(".player-two-name").text(playerTwo.user);
+    $("#dice").show();
+    $("form#userNames").hide();
+  });
+
+  $("#replay").click(function(){
+    $("#dice").hide();
+    $("form#userNames").show();
+    $(".pig").hide();
+    $("#player-one-name").text("");
+    $(".hold-turn").text("");
+    $("#turnRoll2").text("");
+    $(".hold-turn2").text("");
+    $("#player-one-name").text("");
+    $("#turnRoll").text("");
+
   });
 });
