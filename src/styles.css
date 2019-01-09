@@ -1,42 +1,32 @@
-.jumbotron {
-  background-image: url(https://i.imgflip.com/2cewyg.jpg);
-  background-position: 0% 1%;
-  background-size: cover;
-  height: 400px;
-  color: white;
-  text-shadow: black 0.3em 0.3em 0.3em;
-  text-align: center;
-}
-
-.player-two {
-  display: none;
-}
-
-#dice {
-  display:none;
-}
-
-.pig {
-  display: none;
-}
-
-.pigpic {
-  height: 500px
-}
-
 body {
-  background-color: #ededed;
+  background-color: #7FDBFF;
 }
 
-.piglet1img, .piglet2img {
-  width: 100%;
-}
-.piglet2img {
-  float: right;
+#post {
+  display: none;
 }
 
-.start-game {
-  margin-left: 45%;
-  margin-right: 45%;
-  padding: 10px;
+#blog {
+  display: none;
+}
+
+.row {
+  height:3em;
+  line-height:3em;
+}
+
+.box {
+  display:inline-block;
+  width:3em;
+  height:3em;
+  box-sizing:border-box;
+  /* border:1px solid red; */
+}
+
+.input {
+  display:inline-block;
+  width:3em;
+  height:3em;
+  box-sizing:border-box;
+  border:1px solid blue;
 }

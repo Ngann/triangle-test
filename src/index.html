@@ -1,71 +1,10 @@
 <!DOCTYPE html>
+<html>
 <head>
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <title>"The Pig Dice Game"</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <title>Sudoku</title>
 </head>
 <body>
-  <div class="container">
-    <div class="jumbotron">
-      <h2>"The Pig Dice Game"</h2>
-    </div>
 
-    <form id="userNames">
-      <div class="form-group">
-        <label for="player-one">Player One:</label>
-        <input type="text" class="form-control" id="player-one" value="Devin">
-        <br>
-        <label for="player-two">Player Two</label>
-        <input type="text" class="form-control" id="player-two" value="Tavish">
-      </div>
-      <br>
-      <button type="submit" class="btn-success start-game"><h2>Start Game</h2></button>
-    </form>
-
-    <form id="dice">
-      <div class="container">
-        <div class="row">
-
-          <div class="player-one">
-            <div class="col-md-6">
-              <div class="well">
-                <h3><span class="player-one-name"></span> it's your turn!</h3>
-                <p>Your turn's current score is: <span id="turnRoll"></span></p>
-                <p>Your total game score is: <span class="hold-turn"></span></p>
-                <button class="btn btn-success" type="button" id="roll">Roll Dice</button>
-                <button class="btn btn-danger"type="button" id="hold">Hold Turn</button>
-                <span class="player-two-name"></span> total game score is: <span class="hold-turn2"></span></p>
-              </div>
-            </div>
-            <div class="col-md-6 piglet1">
-              <img src="http://purepng.com/public/uploads/large/91508357092fledqwo7l112omqxqwqbba6zx0ykd3iiqkuwsulwtbsvnyg6rtvtvsyfyeine8gyogn748rk8jsxnaqzdsvvhucv3jmy9dnurr9u.png" alt="piglet1" class="piglet1img">
-            </div>
-          </div>
-
-          <div class="player-two">
-            <div class="col-md-6 col-md-offset-6">
-              <div class="well">
-                <h3><span class="player-two-name"></span> it's your turn!</h3>
-                <p>Your turn's current score is: <span id="turnRoll2"></span></p>
-                <p>Your total game score is: <span class="hold-turn2"></span></p>
-                <button class="btn btn-success" type="button" id="roll2">Roll Dice</button>
-                <button class="btn btn-danger"type="button" id="hold2">Hold Turn</button>
-                <span class="player-one-name"></span> total game score is: <span class="hold-turn"></span></p>
-              </div>
-            </div>
-            <div class="col-md-6 piglet2">
-              <img src="http://pngimg.com/uploads/pig/pig_PNG2213.png" alt="piglet2" class="piglet2img">
-            </div>
-          </div>
-        </div>
-      </div>
-    </form>
-
-
-  <div class="pig">
-    <h1><span class="player-won"></span></h1>
-    <img src="https://i.imgur.com/fskQNAL.jpg" class="pigpic" alt="Happy pig">
-    <button class="btn btn-info" type="button" id="replay">Start New Game</button>
-  </div>
-  </body>
+</body>
 </html>
